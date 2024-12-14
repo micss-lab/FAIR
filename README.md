@@ -1,9 +1,9 @@
 # FAIR
 **FAIR Framework**
 
-Eclipse version: eclipse-java-2020-03-R-win32
-Jason   version: 2.6.3
-Java    version: SE 11/7
+* Eclipse version: eclipse-java-2020-03-R-win32
+* Jason   version: 2.6.3
+* Java    version: SE 11/7
 
 Download Links:
 
