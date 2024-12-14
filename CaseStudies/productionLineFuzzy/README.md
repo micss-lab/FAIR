@@ -10,7 +10,7 @@ The fuzzification process was made on the Sort Agent. It should correctly distin
 
 
 
-Fuzzy Membership Functions and Rules are given below:
+** Fuzzy Membership Functions and Rules are given below: **
 
 ![screenshot](fuzzies.png)
 
