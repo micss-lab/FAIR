@@ -6,6 +6,12 @@ Before incorporating ingredients, the system must identify and remove spoiled to
 
 The fuzzification process was made on the Sort Agent. It should correctly distinguish and label the colours, such as red, spoiled red, light green, green and dark green.
 
+Fuzzy Membership Functions and Rules are given below:
+
+![screenshot](fuzzies.png)
+
+![screenshot](rules.png)
+
 
 
 
