@@ -13,8 +13,91 @@ The fuzzification process was made on the Sort Agent. It should correctly distin
 
 ![screenshot](fuzzies.png)
 
-![screenshot](rules.png)
+```
 
+PLANBLOCK SortAgent
+    IF red IS high AND green IS high AND blue IS low THEN
+        saveResult("Red");
 
+    IF red IS medium AND green IS high AND blue IS low THEN
+        saveResult("Red");
+
+    IF red IS medium AND green IS medium AND blue IS low THEN
+        saveResult("Red");
+
+    IF red IS medium AND green IS veryhigh AND blue IS low THEN
+        saveResult("Red");
+
+    IF red IS high AND green IS veryhigh AND blue IS low THEN
+        saveResult("Red");
+
+    IF red IS medium AND green IS medium AND blue IS medium THEN
+        saveResult("SpoiledRed");
+
+    IF red IS medium AND green IS high AND blue IS medium THEN
+        saveResult("SpoiledRed");
+
+    IF red IS high AND green IS high AND blue IS medium THEN
+        saveResult("SpoiledRed");
+
+    IF red IS medium AND green IS medium AND blue IS high THEN
+        saveResult("SpoiledRed");
+
+    IF red IS high AND green IS medium AND blue IS low THEN
+        saveResult("SpoiledRed");
+
+    IF red IS medium AND green IS veryhigh AND blue IS medium THEN
+        saveResult("SpoiledRed");
+
+    IF red IS medium AND green IS veryhigh AND blue IS high THEN
+        saveResult("SpoiledRed");
+
+    IF red IS high AND green IS veryhigh AND blue IS high THEN
+        saveResult("SpoiledRed");
+
+    IF red IS medium AND green IS ultramedium AND blue IS medium THEN
+        saveResult("Light Green");
+
+    IF red IS medium AND green IS ultralow AND blue IS medium THEN
+        saveResult("Light Green");
+
+    IF red IS medium AND green IS ultrahigh AND blue IS medium THEN
+        saveResult("Light Green");
+
+    IF red IS high AND green IS ultramedium AND blue IS medium THEN
+        saveResult("Light Green");
+
+    IF red IS high AND green IS ultramedium AND blue IS high THEN
+        saveResult("Light Green");
+
+    IF red IS high AND green IS ultrahigh AND blue IS medium THEN
+        saveResult("Light Green");
+
+    IF red IS high AND green IS ultrahigh AND blue IS high THEN
+        saveResult("Light Green");
+
+    IF red IS low AND green IS ultralow AND blue IS medium THEN
+        saveResult("Middle Green");
+
+    IF red IS low AND green IS ultramedium AND blue IS low THEN
+        saveResult("Middle Green");
+
+    IF red IS low AND green IS ultralow AND blue IS low THEN
+        saveResult("Middle Green");
+
+    IF red IS low AND green IS ultramedium AND blue IS medium THEN
+        saveResult("Middle Green");
+
+    IF red IS low AND green IS high AND blue IS low THEN
+        saveResult("Dark Green");
+
+    IF red IS low AND green IS high AND blue IS medium THEN
+        saveResult("Dark Green");
+
+    IF red IS low AND green IS veryhigh AND blue IS low THEN
+        saveResult("Dark Green");
+END_PLANBLOCK
+
+```
 
 
