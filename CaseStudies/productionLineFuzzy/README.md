@@ -4,7 +4,11 @@ The system emulates the behaviors and processes typical of industrial CPS classe
 
 Before incorporating ingredients, the system must identify and remove spoiled tomatoes. However, the colour sensor operates under uncertainty due to its limited ability to process colour information. To address this challenge, a fuzzy-logic-based method effectively manages the inherent ambiguities.
 
-The fuzzification process was made on the Sort Agent. It should correctly distinguish and label the colours, such as red, spoiled red, light green, green and dark green.
+The fuzzification process was made on the Sort Agent. It should correctly distinguish and label the colours, such as red, spoiled red, light green, green and dark green, shown below:
+
+![screenshot](bricks.png)
+
+
 
 Fuzzy Membership Functions and Rules are given below:
 
