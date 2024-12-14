@@ -1,0 +1,90 @@
+
+/*start
+
+FUNCTION_BLOCK sortAgent
+
+VAR_INPUT
+    red : REAL ;
+    green: REAL;
+    blue: REAL;
+END_VAR
+
+VAR_OUTPUT
+   saveResult : ACTION ;
+END_VAR
+
+FUZZIFY Red
+    TERM low := trian 0 0 60;
+    TERM middle := trian 0 60 115 ;
+    TERM full := trape 60 115 255 255;
+
+
+END_FUZZIFY
+
+FUZZIFY Green
+
+	TERM low := trian 0 0 20;
+    	TERM middle := trian 0 20 30 ;
+    	TERM high := trian 20 30 50 ;
+    	TERM veryhigh := trian 30 50 80 ;
+    	TERM ultralow := trian 50 80 110 ;
+    	TERM ultramedium := trian 80 110 145 ;
+    	TERM ultrahigh := trape 110 145 255 255 ;
+END_FUZZIFY
+
+
+FUZZIFY Blue
+
+   TERM low := trian 0 0 10.5;
+   TERM middle := trian 5.25 10.5 19.5;
+   TERM full := trape 10.5 19.5 255 255;
+
+END_FUZZIFY
+
+/*PLANDEFSTART
+
+PLANBLOCK SortAgent
+
+    PLAN decidecolorF : IF red IS high AND green IS high AND blue IS low THEN saveResult("Red");
+    PLAN decidecolorF : IF red IS medium AND green IS high AND blue IS low THEN saveResult("Red");
+    PLAN decidecolorF : IF red IS medium AND green IS medium AND blue IS low THEN saveResult("Red");
+    PLAN decidecolorF : IF red IS medium AND green IS veryhigh AND blue IS low THEN saveResult("Red");
+    PLAN decidecolorF : IF red IS high AND green IS veryhigh AND blue IS low THEN saveResult("Red");
+    PLAN decidecolorF : IF red IS medium AND green IS medium AND blue IS medium THEN saveResult("SpoiledRed");
+    PLAN decidecolorF : IF red IS medium AND green IS high AND blue IS medium THEN saveResult("SpoiledRed");
+    PLAN decidecolorF : IF red IS high AND green IS high AND blue IS medium THEN saveResult("SpoiledRed");
+    PLAN decidecolorF : IF red IS medium AND green IS medium AND blue IS high THEN saveResult("SpoiledRed");
+    PLAN decidecolorF : IF red IS high AND green IS medium AND blue IS low THEN saveResult("SpoiledRed");
+    PLAN decidecolorF : IF red IS medium AND green IS veryhigh AND blue IS medium THEN saveResult("SpoiledRed");
+    PLAN decidecolorF : IF red IS medium AND green IS veryhigh AND blue IS high THEN saveResult("SpoiledRed");
+    PLAN decidecolorF : IF red IS high AND green IS veryhigh AND blue IS high THEN saveResult("SpoiledRed");
+    PLAN decidecolorF : IF red IS medium AND green IS ultramedium AND blue IS medium THEN saveResult("Light Green");
+    PLAN decidecolorF : IF red IS medium AND green IS ultralow AND blue IS medium THEN saveResult("Light Green");
+    PLAN decidecolorF : IF red IS medium AND green IS ultrahigh AND blue IS medium THEN saveResult("Light Green");
+    PLAN decidecolorF : IF red IS high AND green IS ultramedium AND blue IS medium THEN saveResult("Light Green");
+    PLAN decidecolorF : IF red IS high AND green IS ultramedium AND blue IS high THEN saveResult("Light Green");
+    PLAN decidecolorF : IF red IS high AND green IS ultrahigh AND blue IS medium THEN saveResult("Light Green");
+    PLAN decidecolorF : IF red IS high AND green IS ultrahigh AND blue IS high THEN saveResult("Light Green");
+    PLAN decidecolorF : IF red IS low AND green IS ultralow AND blue IS medium THEN saveResult("Middle Green");
+    PLAN decidecolorF : IF red IS low AND green IS ultramedium AND blue IS low THEN saveResult("Middle Green");
+    PLAN decidecolorF : IF red IS low AND green IS ultralow AND blue IS low THEN saveResult("Middle Green");
+    PLAN decidecolorF : IF red IS low AND green IS ultramedium AND blue IS medium THEN saveResult("Middle Green");
+    PLAN decidecolorF : IF red IS low AND green IS high AND blue IS low THEN saveResult("Dark Green");
+    PLAN decidecolorF : IF red IS low AND green IS high AND blue IS medium THEN saveResult("Dark Green");
+    PLAN decidecolorF : IF red IS low AND green IS veryhigh AND blue IS low THEN saveResult("Dark Green");
+
+
+END_PLANBLOCK
+PLANDEFEND*/
+
+
+END_FUNCTION_BLOCK
+
+
+
+end*/
+
+
+
+
+
