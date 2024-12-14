@@ -9,8 +9,7 @@ The fuzzification process was made on the Sort Agent. It should correctly distin
 ![screenshot](bricks.png)
 
 
-
-** Fuzzy Membership Functions and Rules are given below: **
+**Fuzzy Membership Functions and Rules are given below:** 
 
 ![screenshot](fuzzies.png)
 
