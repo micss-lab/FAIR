@@ -1,0 +1,14 @@
+MAS networkScaler {
+
+	infrastructure: Centralised
+
+	environment: Network("1","400-500","_fuzzy_")
+
+	agents:
+		// agent1 sample_agent;
+
+		  agentFuzzy fuzzy_agent agentClass FAIR;
+
+	aslSourcePath:
+		"src/asl";
+}
