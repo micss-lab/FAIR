@@ -1,0 +1,32 @@
+MAS productionLine {
+
+
+//infrastructure: Jade(main_container_host("192.168.0.164"))
+  infrastructure: Centralised
+	
+  environment: PLEnv
+	
+	
+	agents:
+//	init2Agent at "c1";
+//	initAgent   initAgent;
+//	dropAgent   dropAgent;	
+//	shredAgent  shredAgent ;                          
+//	sortAgent  orj_sortAgent agentClass FAIR;
+//	buildAgent	buildAgent at "c1" ;
+//	pushAgent	pushAgent at "c1" ;
+
+
+	sortAgent  orj_sortAgent agentClass FAIR ;
+	aslSourcePath:
+		"src/asl";
+
+
+   
+
+
+}
+
+
+
+
