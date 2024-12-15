@@ -1,3 +1,8 @@
+![screenshot](TurretPlanet.png)
+      
+      
+      
+      
       IF windPower IS min THEN considerWindPowerF(1);
       IF windPower IS mid THEN considerWindPowerF(4.1);
       IF windPower IS max THEN considerWindPowerF(8.2);
