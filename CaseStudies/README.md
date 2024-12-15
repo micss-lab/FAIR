@@ -1,1 +1,1 @@
-For each provided case study's folder there is a read me file to explain technical details.
+For each provided case study's folder there is a README.md file to explain technical details.
