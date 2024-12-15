@@ -7,6 +7,8 @@ The (fuzzy-)BDI agent reasons for the increasing/decreasing workload and decides
 
 
 
+**Fuzzy rules are given below:**
+
 ```
    IF workLoad IS low AND responseTime IS good THEN scaleFactorF(-15);
    IF workLoad IS low AND responseTime IS ok THEN scaleFactorF(-10);
