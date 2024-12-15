@@ -1,3 +1,4 @@
+![screenshot](CleaningRobots.png)
 
 ```IF batteryPower IS min AND vacuumBag IS min AND dirtIntensity IS min THEN burnGarb(50);
    IF batteryPower IS min AND vacuumBag IS min AND dirtIntensity IS mid THEN burnGarb(70);
