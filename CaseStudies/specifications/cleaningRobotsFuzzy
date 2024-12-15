@@ -1,0 +1,82 @@
+/*start
+
+FUNCTION_BLOCK cleaningRobotsFuzzy
+
+VAR_INPUT
+    batteryCapacity : REAL;   // Remaining battery level 
+    vacuuumCapacity : REAL;    //  vacuum bag capacity
+    intensityValue : REAL;  // Intensity of detected dirt ranges 0 and 100
+END_VAR
+
+VAR_OUTPUT
+    burnGarb : FACTION;     // Vacuum power adjustment level (50, 70, 90, or 100)
+END_VAR
+
+
+FUZZIFY batteryCapacity
+    TERM min := triangular(0.0, 5.0, 8.5);
+    TERM mid := triangular(7.5, 10.0, 12.5);
+    TERM max := triangular(10.0, 15.0, 15.0);
+END_FUZZIFY
+
+FUZZIFY vacuumBag
+    TERM min := triangular(0.0, 0.0, 1000.0);
+    TERM mid := triangular(500.0, 1000.0, 1500.0);
+    TERM max := triangular(1000.0, 2000.0, 2000.0);
+END_FUZZIFY
+
+FUZZIFY dirtIntensity
+    TERM min := triangular(30.0, 40.0, 50.0);
+    TERM mid := triangular(50.0, 60.0, 70.0);
+    TERM max := triangular(70.0, 100.0, 100.0);
+END_FUZZIFY
+
+/*PLANDEFSTART
+
+PLANBLOCK r1
+
+    PLAN arrangeVacuumPower : IF batteryPower IS min AND vacuumBag IS min AND dirtIntensity IS min THEN burnGarb(50);
+    PLAN arrangeVacuumPower : IF batteryPower IS min AND vacuumBag IS min AND dirtIntensity IS mid THEN burnGarb(70);
+    PLAN arrangeVacuumPower : IF batteryPower IS min AND vacuumBag IS min AND dirtIntensity IS max THEN burnGarb(90);
+
+    PLAN arrangeVacuumPower : IF batteryPower IS min AND vacuumBag IS mid AND dirtIntensity IS min THEN burnGarb(50);
+    PLAN arrangeVacuumPower : IF batteryPower IS min AND vacuumBag IS mid AND dirtIntensity IS mid THEN burnGarb(70);
+    PLAN arrangeVacuumPower : IF batteryPower IS min AND vacuumBag IS mid AND dirtIntensity IS max THEN burnGarb(90);
+
+    PLAN arrangeVacuumPower : IF batteryPower IS min AND vacuumBag IS max AND dirtIntensity IS min THEN burnGarb(50);
+    PLAN arrangeVacuumPower : IF batteryPower IS min AND vacuumBag IS max AND dirtIntensity IS mid THEN burnGarb(70);
+    PLAN arrangeVacuumPower : IF batteryPower IS min AND vacuumBag IS max AND dirtIntensity IS max THEN burnGarb(90);
+
+    PLAN arrangeVacuumPower : IF batteryPower IS mid AND vacuumBag IS min AND dirtIntensity IS min THEN burnGarb(50);
+    PLAN arrangeVacuumPower : IF batteryPower IS mid AND vacuumBag IS min AND dirtIntensity IS mid THEN burnGarb(70);
+    PLAN arrangeVacuumPower : IF batteryPower IS mid AND vacuumBag IS min AND dirtIntensity IS max THEN burnGarb(90);
+
+    PLAN arrangeVacuumPower : IF batteryPower IS mid AND vacuumBag IS mid AND dirtIntensity IS min THEN burnGarb(50);
+    PLAN arrangeVacuumPower : IF batteryPower IS mid AND vacuumBag IS mid AND dirtIntensity IS mid THEN burnGarb(70);
+    PLAN arrangeVacuumPower : IF batteryPower IS mid AND vacuumBag IS mid AND dirtIntensity IS max THEN burnGarb(90);
+
+    PLAN arrangeVacuumPower : IF batteryPower IS mid AND vacuumBag IS max AND dirtIntensity IS min THEN burnGarb(50);
+    PLAN arrangeVacuumPower : IF batteryPower IS mid AND vacuumBag IS max AND dirtIntensity IS mid THEN burnGarb(70);
+    PLAN arrangeVacuumPower : IF batteryPower IS mid AND vacuumBag IS max AND dirtIntensity IS max THEN burnGarb(90);
+
+    PLAN arrangeVacuumPower : IF batteryPower IS max AND vacuumBag IS min AND dirtIntensity IS min THEN burnGarb(50);
+    PLAN arrangeVacuumPower : IF batteryPower IS max AND vacuumBag IS min AND dirtIntensity IS mid THEN burnGarb(70);
+    PLAN arrangeVacuumPower : IF batteryPower IS max AND vacuumBag IS min AND dirtIntensity IS max THEN burnGarb(90);
+
+    PLAN arrangeVacuumPower : IF batteryPower IS max AND vacuumBag IS mid AND dirtIntensity IS min THEN burnGarb(50);
+    PLAN arrangeVacuumPower : IF batteryPower IS max AND vacuumBag IS mid AND dirtIntensity IS mid THEN burnGarb(100);
+    PLAN arrangeVacuumPower : IF batteryPower IS max AND vacuumBag IS mid AND dirtIntensity IS max THEN burnGarb(100);
+
+    PLAN arrangeVacuumPower : IF batteryPower IS max AND vacuumBag IS max AND dirtIntensity IS min THEN burnGarb(70);
+    PLAN arrangeVacuumPower : IF batteryPower IS max AND vacuumBag IS max AND dirtIntensity IS mid THEN burnGarb(100);
+    PLAN arrangeVacuumPower : IF batteryPower IS max AND vacuumBag IS max AND dirtIntensity IS max THEN burnGarb(100);
+
+END_PLANBLOCK
+
+PLANDEFEND*/
+
+END_FUNCTION_BLOCK
+
+
+
+end*/
