@@ -22,6 +22,9 @@ The (fuzzy-)BDI agent reasons for the increasing/decreasing workload and decides
 
 ```
 
+![screenshot](responseTime.png)
+![screenshot](workLoad.png)
+
 
 
 [1] Weyns, D. (2020). An introduction to self-adaptive systems: A contemporary software engineering perspective. John Wiley & Sons.
