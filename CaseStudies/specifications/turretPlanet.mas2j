@@ -1,1 +1,59 @@
+FUNCTION_BLOCK turretPlanet    // Definition of the function block
+
+// Input variables
+VAR_INPUT
+    windPower : REAL;       // Input: wind power magnitude
+    deltaX : REAL;          // Input: directional adjustment on X-axis
+    deltaY : REAL;          // Input: directional adjustment on Y-axis
+    deltaXneg: REAL;
+    deltaYneg: REAL; 
+
+END_VAR
+
+// Output variables
+VAR_OUTPUT
+    considerWindPowerF : FACTION;      // Output: recommended wind adjustment plan for velocity
+    degAndVelX : FACTION; // Fuzzfied degree approximation for X-axis
+    degAndVelY : FACTION; // Fuzzfied degree approximation for Y-axis
+END_VAR
+
+// Fuzzification of windPower  
+FUZZIFY windPower
+    TERM min := trian 0.0 0.075 0.115;
+    TERM mid := trian 0.055  0.165  0.235;
+    TERM max := trian 0.16  0.295  0.33  0.33;
+END_FUZZIFY
+
+// Fuzzification of deltaX
+FUZZIFY deltaX
+    TERM min := trian 0.0 1.5 2.0;
+    TERM mid := trian 1.5 3.0 4.5;
+    TERM max := trian 3.0 5.0 7.0;
+END_FUZZIFY
+
+
+// Fuzzification of deltaXneg
+FUZZIFY deltaXneg
+    TERM min := trian 0.0 1.5 2.0;
+    TERM mid := trian 1.5 3.0 4.5;
+    TERM max := trian 3.0 5.0 7.0;
+END_FUZZIFY
+
+
+// Fuzzification of deltaY
+FUZZIFY deltaY
+    TERM min := trian 0.0 1.0 2.0;
+    TERM mid := trian 1.5 3.0 4.5;     // Custom triangular function adjusted for dynamic scaling
+    TERM max := trian 3.0 5.0 7.0;
+
+END_FUZZIFY
+
+FUZZIFY deltaYneg
+    TERM negMin := trian 0.0 1.0 2.0;
+    TERM negMid := trian 1.5 3.0 4.5;
+    TERM negMax := trian 3.0 5.0 7.0;
+END_FUZZIFY
+
+
+
 
