@@ -1,0 +1,19 @@
+MAS cleaningRobotsFuzzy {
+
+	infrastructure: Centralised
+
+	environment: MarsEnv(9,5,1000,"boolean")
+
+	agents:
+
+	r2 r2 ;
+
+	r1 r11 ;  
+
+	r3 r33 ; 
+
+
+
+	aslSourcePath:
+		"src/asl";
+}
