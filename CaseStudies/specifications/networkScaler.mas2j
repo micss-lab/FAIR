@@ -1,0 +1,53 @@
+/*start
+
+FUNCTION_BLOCK networkScaler
+
+VAR_INPUT
+    workLoad : REAL;
+    responseTime : REAL;
+END_VAR
+
+VAR_OUTPUT
+    scaleFactorF : FACTION;
+    consumeWorkLoad : ACTION;
+END_VAR
+
+FUZZIFY workLoad
+
+    TERM low := trape 0.0 0.0 75.0 125.0;
+    TERM medium := trape 50.0 150.0 300.0 400.0;
+    TERM high := trape 250.0 400.0 5000.0 5000.0;
+
+END_FUZZIFY
+
+FUZZIFY responseTime
+
+    TERM good := trape 0.0 0.0 5.0 7.5;
+    TERM ok := trape 5.0 7.5 7.5 10.0;
+    TERM bad := trape 7.5 10.0 100.0 100.0;
+
+END_FUZZIFY
+
+/*PLANDEFSTART
+
+PLANBLOCK fuzzy_agent
+
+    PLAN arrangeResourceScale : IF workLoad IS low AND responseTime IS good THEN scaleFactorF(-15); consumeWorkLoad;
+    PLAN arrangeResourceScale : IF workLoad IS low AND responseTime IS ok THEN scaleFactorF(-10); consumeWorkLoad;
+    PLAN arrangeResourceScale : IF workLoad IS low AND responseTime IS bad THEN scaleFactorF(10); consumeWorkLoad;
+
+    PLAN arrangeResourceScale : IF workLoad IS medium AND responseTime IS good THEN scaleFactorF(-10); consumeWorkLoad;
+    PLAN arrangeResourceScale : IF workLoad IS medium AND responseTime IS ok THEN scaleFactorF(0); consumeWorkLoad;
+    PLAN arrangeResourceScale : IF workLoad IS medium AND responseTime IS bad THEN scaleFactorF(10); consumeWorkLoad;
+
+    PLAN arrangeResourceScale : IF workLoad IS high AND responseTime IS good THEN scaleFactorF(0); consumeWorkLoad;
+    PLAN arrangeResourceScale : IF workLoad IS high AND responseTime IS ok THEN scaleFactorF(10); consumeWorkLoad;
+    PLAN arrangeResourceScale : IF workLoad IS high AND responseTime IS bad THEN scaleFactorF(15); consumeWorkLoad;
+
+END_PLANBLOCK
+
+PLANDEFEND*/
+
+END_FUNCTION_BLOCK
+
+end*/
