@@ -5,7 +5,7 @@ The (fuzzy-)BDI agent reasons for the increasing/decreasing workload and decides
 
 9 rules (fuzzy plans) are written for both agents.  On the boolean side, scale factors assigned to each plan are fixed. Considering the response time, these scale factors are arranged on the fuzzy side. Response time is calculated by total workload/numberOfMachines.
 
-
+[1] Weyns, D. (2020). An introduction to self-adaptive systems: A contemporary software engineering perspective. John Wiley & Sons.
 
 **Fuzzy rules are given below:**
 
@@ -27,4 +27,5 @@ The (fuzzy-)BDI agent reasons for the increasing/decreasing workload and decides
 
 
 
-[1] Weyns, D. (2020). An introduction to self-adaptive systems: A contemporary software engineering perspective. John Wiley & Sons.
+
+
