@@ -43,7 +43,7 @@ END_FUZZIFY
 // Fuzzification of deltaY
 FUZZIFY deltaY
     TERM min := trian 0.0 1.0 2.0;
-    TERM mid := trian 1.5 3.0 4.5;     // Custom triangular function adjusted for dynamic scaling
+    TERM mid := trian 1.5 3.0 4.5;     
     TERM max := trian 3.0 5.0 7.0;
 
 END_FUZZIFY
@@ -54,6 +54,36 @@ FUZZIFY deltaYneg
     TERM negMax := trian 3.0 5.0 7.0;
 END_FUZZIFY
 
+/*PLANDEFSTART
+
+PLANBLOCK SortAgent
+
+        PLAN considerWindPower : IF windPower IS min THEN considerWindPowerF(1);
+        PLAN considerWindPower : IF windPower IS mid THEN considerWindPowerF(4.1);
+        PLAN considerWindPower : IF windPower IS max THEN considerWindPowerF(8.2);
+
+        PLAN selectDX: IF deltaX IS min THEN degAndVelX(-0.5);
+        PLAN selectDX: IF deltaX IS mid THEN degAndVelX(-0.7);
+        PLAN selectDX: IF deltaX IS max THEN degAndVelX(-0.9);
+
+        PLAN selectDX: IF deltaXneg IS min THEN degAndVelX(0.5);
+        PLAN selectDX: IF deltaXneg IS mid THEN degAndVelX(0.7);
+        PLAN selectDX: IF deltaXneg IS max THEN degAndVelX(1.0);
+
+        PLAN selectDY: IF deltaY IS min THEN degAndVelY(-4.0);
+        PLAN selectDY: IF deltaY IS mid THEN degAndVelY(-5.0);
+        PLAN selectDY: IF deltaY IS max THEN degAndVelY(-5.5);
+
+        PLAN selectDY: IF deltaYneg IS min THEN degAndVelY(2.5);
+        PLAN selectDY: IF deltaYneg IS mid THEN degAndVelY(3.5);
+        PLAN selectDY: IF deltaYneg IS max THEN degAndVelY(4.5);
+
+END_PLANBLOCK
+PLANDEFEND*/
+
+
+END_FUNCTION_BLOCK
 
 
 
+end*/
