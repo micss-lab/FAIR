@@ -32,8 +32,8 @@ MAS turretPlanetAgent
 
 **Directories**
 
-1- CaseStudies -> The pages and case study files for each case study for reproducibility.
-2- dataInputs  -> Data inputs prepared for each case study to compare boolean and fuzzy BDI approaches.
-3- dataOutputs -> Gathered data from the case studies.
-4- Experiments -> Experimental Analyses of the output data to compare boolean and fuzzy BDI methods.
-5- FAIR.java   -> The java file to use FAIR fuzzy architectural extension and enhancement on BDI agents.
+1. CaseStudies -> The pages and case study files for each case study for reproducibility.
+2. dataInputs  -> Data inputs prepared for each case study to compare boolean and fuzzy BDI approaches.
+3. dataOutputs -> Gathered data from the case studies.
+4. Experiments -> Experimental Analyses of the output data to compare boolean and fuzzy BDI methods.
+5. FAIR.java   -> The java file to use FAIR fuzzy architectural extension and enhancement on BDI agents.
